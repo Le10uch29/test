@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/addcart.css">
+    <script defer src="./card.js/addcart.js"></script>
+    <title>Add Cart</title>
+</head>
+
+<body>
+    <section class="cart">
+        <h1>Add Cart</h1>
+        <div class="container cart-container">
+            <h2 class="cart-title">Add Product</h2>
+            <form class="cart-form" id="addCart">
+                <div class="cart-input" id="cartProduct">
+                    <label for="productInput">Product Name</label>
+                    <input type="text" class="form-input" id="productInput">
+                </div>
+                <div class="cart-input" id="cartCategory">
+                    <label for="categoryInput">Choose Cart</label>
+                    <select class="form-input" id="cartSelect">
+                        <option value="Choose Cart" >Choose Cart</option>
+                        <option value="Gəncə sebeti">Gəncə sebeti</option>
+                        <option value="Lerik səbəti">Lerik səbəti</option>
+                        <option value="Şəki səbəti">Şəki səbəti</option>
+                        <option value="Qazax səbəti">Qazax səbəti</option>
+                    </select>
+                </div>
+                <div class="cart-input cart-img" id="cartImg">
+                    <label for="imgInput" class="custom-file-upload">Upload Image</label>
+                    <input type="file" class="form-input img-input" id="imgInput">
+                    <span id="file-name" >No file chosen</span>
+                    
+                </div> 
+                <button type="submit" class="btn-reset add-btn" id="addBtn">Submit</button>
+            </form>
+        </div>
+
+    </section>
+</body>
+
+</html>

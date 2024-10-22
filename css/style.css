@@ -1,0 +1,158 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Nunito Sans" sans-serif;
+    background-color: #fff;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 5px 10px;
+    background-color: #d8d8d8;
+}
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1620px;
+    padding: 0 100px;
+}
+
+/**/
+
+header {
+    background-color: #2E8B57;
+    margin-bottom: 20px;
+}
+
+.header-title a:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid red;
+}
+
+.header-title a:hover {
+    color: blue;
+}
+
+
+.header-container {
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-item a:focus {
+    outline: none;
+    border-bottom: 1px solid red;
+}
+
+.nav-item a:hover {
+    color: blue;
+}
+
+
+/*products-category*/
+.products-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.products-category {
+    margin-bottom: 40px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-btn {
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#cart img {
+    width: 650px;
+    height: 650px;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    position: absolute;
+    top: 80px;
+    right: 380px;
+}

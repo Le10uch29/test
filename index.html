@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kənd Məhsulları</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="header-title"><a href="#kənd-məhsulları">Kənd Məhsulları</a></h1>
+            <nav class="nav header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#gence">Gəncə Səbəti</a></li>
+                    <li class="nav-item"><a href="#lerik">Lerik Səbəti</a></li>
+                    <li class="nav-item"><a href="#seki">Şəki Səbəti</a></li>
+                    <li class="nav-item"><a href="#qazax">Qazax Səbəti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="products">
+        <div class="container products-container">
+           <div class="products-category" id="gence">
+                <h2>Gəncə Məhsulları</h2>
+                <div class="product">
+                    <img src="gence_product.jpg" alt="Gəncə Məhsulu">
+                    <p>Gəncə Balı</p>
+                    <button class="btn-reset product-btn" onclick="addToCart('Gəncə Balı')">Səbətə at</button>
+                </div>
+            </div>
+
+            <div class="products-category" id="lerik">
+                <h2>Lerik Məhsulları</h2>
+                <div class="product">
+                    <img src="lerik_product.jpg" alt="Lerik Məhsulu">
+                    <p>Lerik Çayı</p>
+                    <button class="btn-reset product-btn" onclick="addToCart('Lerik Çayı')">Səbətə at</button>
+                </div>
+            </div>
+
+            <div class="products-category" id="seki">
+                <h2>Şəki Məhsulları</h2>
+                <div class="product">
+                    <img src="Şəki_product.jpg" alt="Şəki Məhsulu">
+                    <p>Şəki Çayı</p>
+                    <button class="btn-reset product-btn" onclick="addToCart('Şəki Çayı')">Səbətə at</button>
+                </div>
+            </div>
+
+            <div class="products-category" id="qazax">
+                <h2>Qazax Məhsulları</h2>
+                <div class="product">
+                    <img src="Qazax_product.jpg" alt="Qazax Məhsulu">
+                    <p>Qazax Balı</p>
+                    <button class="btn-reset product-btn" onclick="addToCart('Qazax Balı')">Səbətə at</button>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <footer id="footer">
+        <div id="cart" class="container footer-container">
+            <img src="./img/cart-fruit.png" alt="Səbət İkonu">
+            <span id="cart-count">0</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
