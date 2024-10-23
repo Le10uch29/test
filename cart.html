@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="az">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kənd Məhsulları</title>
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/media.css">
-
+    <script defer src="./js/cart.js"></script>
     <script defer src="./js/index.js"></script>
+    <title>Cart</title>
 </head>
-
 <body>
     <header class="header">
         <div class="container header-container">
@@ -23,31 +21,20 @@
                     <li class="nav-item"><a href="#seki">Şəki Səbəti</a></li>
                     <li class="nav-item"><a href="#qazax">Qazax Səbəti</a></li>
                 </ul>
-                <a href="./addproduct.html"><img src="./img/sing.png" alt="sing In" class="nav-sing"></a>
             </nav>
+            
         </div>
     </header>
 
-    <section id="products">
-        <div class="container products-container">
-            <ul class="list-reset products-list" id="productsList">
+    <main>
+        <sectiom class="products">
+            <div class="container products-container">
+                <ul class="list-reset products-list" id="cart-items">
 
-            </ul>
-        </div>
-
-    </section>
-
-    <footer id="footer">
-        <div id="cart" class="container footer-container">
-            <div class="cart-block">
-                <a href="./cart.html" alt="cart">
-                <img src="./img/cart.png" alt="Səbət İkonu">
-                <span id="cart-count">0</span>
-            </a>
+                </ul>
             </div>
-        </div>
-    </footer>
-    <script defer src="./js/addproduct.js"></script>
+        </sectiom>
+    </main>   
+    
 </body>
-
 </html>
