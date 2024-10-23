@@ -79,9 +79,29 @@ header {
 
 
 .header-container {
+    display: flex;
     color: white;
     padding: 10px;
     text-align: center;
+    flex-wrap: wrap;
+}
+
+.header-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+.header-title {
+    width: 400px;
+    margin-right: 40px;
+}
+
+.header-nav {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
 }
 
 .nav-list {
@@ -90,7 +110,10 @@ header {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-self: center;
+    align-content: center;
     gap: 15px;
+    margin-right: 40px;
 }
 
 .nav-item a {
@@ -108,6 +131,18 @@ header {
     color: blue;
 }
 
+.header-back:focus {
+    outline: none;
+    border-bottom: 1px solid red;
+}
+
+.header-back:hover {
+    color: blue;
+}
+
+
+
+/*cart*/
 .cart-list {
     display: flex;
     flex-wrap: wrap;

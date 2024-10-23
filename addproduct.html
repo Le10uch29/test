@@ -4,15 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/addproduct.css">
+    <link rel="stylesheet" href="./css/media.css">
     
     <title>Add Product</title>
 </head>
 
 <body>
+
+    <header class="header">
+        <div class="container header-container">
+            <img src="./img/logo.png" alt="logo" class="header-logo">
+            <h1 class="header-title"><a href="#kənd-məhsulları">Kənd Məhsulları</a></h1>
+            <nav class="nav header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#gence">Gəncə Səbəti</a></li>
+                    <li class="nav-item"><a href="#lerik">Lerik Səbəti</a></li>
+                    <li class="nav-item"><a href="#seki">Şəki Səbəti</a></li>
+                    <li class="nav-item"><a href="#qazax">Qazax Səbəti</a></li>
+                </ul>
+                <a href="./index.html" class="header-back">Back</a>
+            </nav>
+        </div>
+    </header>
+
     <section class="add">
-        <h1>Add Product</h1>
+        <h2>Add Product</h2>
         <div class="container add-container">
             <h2 class="add-title">Add Product</h2>
             <form class="add-form" id="addForm">
@@ -21,7 +40,7 @@
                     <input type="text" class="form-input" id="productInput">
                 </div>
                 <div class="add-input" id="addCategory">
-                    <label for="categoryInput">Choose add</label>
+                    <label for="addSelect">Choose add</label>
                     <select class="form-input" id="addSelect">
                         <option value="Choose add" >Choose add</option>
                         <option value="Gəncə sebeti" id="gence">Gəncə sebeti</option>

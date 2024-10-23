@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productDescription = document.getElementById('aboutProduct').value;
 
     if (productImage && productImage.type.startsWith('image/')) {
-        const imageUrl = URL.createObjectURL(productImage); // Создаём URL для изображения
+        const imageUrl = URL.createObjectURL(productImage); 
         console.log('Generated Image URL:', imageUrl);
     
     
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             category: productCategory,
             categoryId: productCategoryId,
             description: productDescription,
-            image: imageUrl // Используем созданный URL
+            image: imageUrl
     };
 
   
@@ -32,17 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('addForm').reset();
     document.getElementById('file-name').innerText = "No file chosen";
     alert('Product added successfully!');
-    displayProducts(); // Refresh the product display
+    displayProducts(); 
 } else {
     alert('Please select an image to upload.');
 }
 });
 
-if (form) {  // Проверка на существование формы
+if (form) {  
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Логика обработки формы
+
     });
 } else {
     console.error('Element with ID "addForm" not found.');

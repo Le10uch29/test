@@ -6,7 +6,7 @@
         overflow: auto;
         touch-action: auto;
     }
-    
+
     .container {
         padding: 0 50px;
     }
@@ -15,17 +15,43 @@
         gap: 20px;
     }
 
+    .add-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 }
 
 
 /*460px*/
-@media(max-width: 460px) {
+@media(max-width: 490px) {
+    body {
+        overflow: hidden;
+    }
 
     .container {
         padding: 0 20px;
     }
 
+    .header-title {
+        margin: 0;
+        width: 400px;
+        margin-right: 0px;
+    }
+
+    .nav-list {
+        gap: 5px;
+        margin-right: 10px;
+    }
+
+    .add-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .add-img {
+        align-self: flex-start;
+        order: -1;
+    }
 
     #cart img {
         width: 250px;

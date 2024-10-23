@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Отобразить товары при загрузке страницы
+
     displayProducts();
 
-    // Добавить товар в корзину
     productsList.addEventListener('click', function (event) {
         if (event.target.classList.contains('add-to-cart-btn')) {
             const index = event.target.dataset.index;
@@ -34,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
 
 
