@@ -7,6 +7,7 @@
     <title>Kənd Məhsulları</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
     <script src="./js/index.js"></script>
 </head>
 
@@ -28,37 +29,37 @@
     <section id="products">
         <div class="container products-container">
            <div class="products-category" id="gence">
-                <h2>Gəncə Məhsulları</h2>
+                <h2 class="products-title">Gəncə Məhsulları</h2>
                 <div class="product">
-                    <img src="gence_product.jpg" alt="Gəncə Məhsulu">
-                    <p>Gəncə Balı</p>
+                    <img class="product-img" src="gence_product.jpg" alt="Gəncə Məhsulu">
+                    <p class="products-descr">Gəncə Balı</p>
                     <button class="btn-reset product-btn" onclick="addToCart('Gəncə Balı')">Səbətə at</button>
                 </div>
             </div>
 
             <div class="products-category" id="lerik">
-                <h2>Lerik Məhsulları</h2>
+                <h2 class="products-title">Lerik Məhsulları</h2>
                 <div class="product">
-                    <img src="lerik_product.jpg" alt="Lerik Məhsulu">
-                    <p>Lerik Çayı</p>
+                    <img class="product-img" src="lerik_product.jpg" alt="Lerik Məhsulu">
+                    <p class="products-descr">Lerik Çayı</p>
                     <button class="btn-reset product-btn" onclick="addToCart('Lerik Çayı')">Səbətə at</button>
                 </div>
             </div>
 
             <div class="products-category" id="seki">
-                <h2>Şəki Məhsulları</h2>
+                <h2 class="products-title">Şəki Məhsulları</h2>
                 <div class="product">
-                    <img src="Şəki_product.jpg" alt="Şəki Məhsulu">
-                    <p>Şəki Çayı</p>
+                    <img class="product-img" src="Şəki_product.jpg" alt="Şəki Məhsulu">
+                    <p class="products-descr">Şəki Çayı</p>
                     <button class="btn-reset product-btn" onclick="addToCart('Şəki Çayı')">Səbətə at</button>
                 </div>
             </div>
 
             <div class="products-category" id="qazax">
-                <h2>Qazax Məhsulları</h2>
+                <h2 class="products-title">Qazax Məhsulları</h2>
                 <div class="product">
-                    <img src="Qazax_product.jpg" alt="Qazax Məhsulu">
-                    <p>Qazax Balı</p>
+                    <img class="product-img" src="Qazax_product.jpg" alt="Qazax Məhsulu">
+                    <p class="products-descr">Qazax Balı</p>
                     <button class="btn-reset product-btn" onclick="addToCart('Qazax Balı')">Səbətə at</button>
                 </div>
             </div>
@@ -68,8 +69,10 @@
 
     <footer id="footer">
         <div id="cart" class="container footer-container">
+            <div class="cart-block">
             <img src="./img/cart-fruit.png" alt="Səbət İkonu">
             <span id="cart-count">0</span>
+        </div>
         </div>
     </footer>
 

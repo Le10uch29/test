@@ -1,0 +1,36 @@
+/*860px*/
+
+@media(max-width: 800px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .container {
+        padding: 0 50px;
+    }
+
+    .products-container {
+        gap: 20px;
+    }
+
+
+}
+
+
+/*460px*/
+@media(max-width: 460px) {
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .products-container {
+        gap: 20px;
+    }
+
+    #cart img {
+        width: 250px;
+        height: 250px;
+    }
+}
