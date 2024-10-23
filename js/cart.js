@@ -1,85 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    let storedProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+document.addEventListener('DOMContentLoaded', function () {
+    const cartList = document.getElementById('cartList');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
- 
-    function renderCartItems() {
-        cartItemsContainer.innerHTML = '';
-
-        if (storedProducts.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Ваша корзина пуста.</p>';
-            return;
-        }
-
-        storedProducts.forEach((product, index) => {
+    function displayCartItems() {
+        cartList.innerHTML = '';
+        cart.forEach((item, index) => {
             const listItem = document.createElement('li');
-            listItem.classList.add('item-product');
-
+            listItem.classList.add('cart-item');
             listItem.innerHTML = `
-                <div class="products-category">
-                    <h2 class="products-title">${product.category}</h2>
-                    <img class="product-img" src="${product.image}" alt="${product.name}">
-                    <p class="products-descr">${product.name}</p>
-                    <button class="btn-reset remove-btn" data-index="${index}">Delete</button>
+                <h2 class="cart-title">${item.name}</h2>
+                <img class="cart-img" src="${item.image}" alt="${item.name}">
+                <p class="cart-descr">${item.description}</p>
+                <div class="btn-group">
+                <button class="btn-reset buy-btn" data-index="${index}">Buy</button>
+                <button class="btn-reset remove-btn" data-index="${index}">Remove</button>
                 </div>
             `;
-
-            cartItemsContainer.appendChild(listItem);
-        });
-
-        const removeButtons = document.querySelectorAll('.remove-btn');
-        removeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const productIndex = this.getAttribute('data-index');
-                removeProductFromCart(productIndex);
-            });
+            cartList.appendChild(listItem);
         });
     }
 
-    function removeProductFromCart(index) {
-        storedProducts.splice(index, 1);
-        localStorage.setItem('cartProducts', JSON.stringify(storedProducts));
-        renderCartItems(); 
-    }
 
-   
-    renderCartItems();
-});
+    displayCartItems();
 
-// filter
-document.addEventListener('DOMContentLoaded', function () {
-    const allCategories = document.querySelectorAll('.products-category');
-    const navLinks = document.querySelectorAll('.nav-item a');
-    const allProductsLink = document.querySelector('.header-title a');
-
-    function showAllCategories() {
-        allCategories.forEach(category => {
-            category.style.display = 'block';
-        });
-    }
-
-    function filterByCategory(categoryId) {
-        allCategories.forEach(category => {
-            if (category.id === categoryId) {
-                category.style.display = 'block';
-            } else {
-                category.style.display = 'none';
-            }
-        });
-    }
-
-    allProductsLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        showAllCategories();
+   //delete
+    cartList.addEventListener('click', function (event) {
+        if (event.target.classList.contains('remove-btn')) {
+            const index = event.target.dataset.index;
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCartItems();
+        }
     });
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const categoryId = this.getAttribute('href').replace('#', '');
-            filterByCategory(categoryId);
-        });
-    });
 
-    showAllCategories();
+    document.getElementById('clearCart').addEventListener('click', function () {
+        cart = [];
+        localStorage.removeItem('cart');
+        displayCartItems();
+    });
 });

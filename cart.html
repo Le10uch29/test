@@ -3,38 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
+    <title>Your Cart</title>
     <link rel="stylesheet" href="./css/cart.css">
-    <link rel="stylesheet" href="./css/media.css">
-    <script defer src="./js/cart.js"></script>
-    <script defer src="./js/index.js"></script>
-    <title>Cart</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <h1 class="header-title"><a href="#kənd-məhsulları">Kənd Məhsulları</a></h1>
-            <nav class="nav header-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#gence">Gəncə Səbəti</a></li>
-                    <li class="nav-item"><a href="#lerik">Lerik Səbəti</a></li>
-                    <li class="nav-item"><a href="#seki">Şəki Səbəti</a></li>
-                    <li class="nav-item"><a href="#qazax">Qazax Səbəti</a></li>
-                </ul>
-            </nav>
-            
+    <section class="cart">
+        <div class="container">
+        <h1>Your Cart</h1>
+        <ul id="cartList" class="list-reset cart-list"></ul>
+        <button id="clearCart" class="btn-reset cart-btn">Clear Cart</button>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <sectiom class="products">
-            <div class="container products-container">
-                <ul class="list-reset products-list" id="cart-items">
-
-                </ul>
-            </div>
-        </sectiom>
-    </main>   
-    
+    <script defer src="./js/cart.js"></script>
 </body>
 </html>

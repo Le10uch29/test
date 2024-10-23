@@ -1,35 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
-function displayProducts(selectedCategory = '') {
+document.addEventListener('DOMContentLoaded', function () {
     const productsList = document.getElementById('productsList');
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    productsList.innerHTML = '';
+    let products = JSON.parse(localStorage.getItem('products')) || [];
 
-
-        products.forEach(product => {
-        const productCard = document.createElement('li');
-        productCard.classList.add('product-card');
-        productCard.id = product.category.toLowerCase();
-
-        productCard.innerHTML = `
-            <h2 class="products-title">${product.category}</h2>
+    function displayProducts() {
+        productsList.innerHTML = '';
+        products.forEach((product, index) => {
+            const productCard = document.createElement('li');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                <h2 class="product-title">${product.name}</h2>
                 <img class="product-img" src="${product.image}" alt="${product.name}">
-            <div class="roduct">
-            <p class="products-descr">${product.description}</p>
-            <button class="btn-reset product-btn">Add to Cart</button>
-            </div>
-        `;
-        productsList.appendChild(productCard);
+                <p class="product-descr">${product.description}</p>
+                <button class="btn-reset add-to-cart-btn" data-index="${index}">Add to Cart</button>
+            `;
+            productsList.appendChild(productCard);
+        });
+    }
+
+    // Отобразить товары при загрузке страницы
+    displayProducts();
+
+    // Добавить товар в корзину
+    productsList.addEventListener('click', function (event) {
+        if (event.target.classList.contains('add-to-cart-btn')) {
+            const index = event.target.dataset.index;
+            const product = products[index];
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert('Product added to cart!');
+        }
     });
-
-    
-}
-
-
-
-document.addEventListener('DOMContentLoaded', displayProducts);
-displayProducts();
-
-})
+});
 
 
 
