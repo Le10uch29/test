@@ -22,13 +22,18 @@
 
     .header-container {
         justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .products-container {
         justify-content: center;
     }
     
- 
+ .header-logo {
+    margin: 0;
+    margin-bottom: 20px;
+ }
 
 }
 

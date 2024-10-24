@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             productCard.classList.add('product-card');
             productCard.innerHTML = `
             <div claSS="product">
-                <h2 class="product-title">${product.name}</h2>
+                <h2 class="product-title">${product.category}</h2>
                 <img class="product-img" src="${product.image}" alt="${product.name}">
                 <p class="product-descr">${product.description}</p>
                 <button class="btn-reset product-btn" data-index="${index}">Add to Cart</button>\

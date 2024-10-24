@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const listItem = document.createElement('li');
             listItem.classList.add('cart-item');
             listItem.innerHTML = `
-                <h2 class="cart-title">${item.name}</h2>
+                <h2 class="cart-title">${item.category}</h2>
                 <img class="cart-img" src="${item.image}" alt="${item.name}">
                 <p class="cart-descr">${item.description}</p>
                 <div class="btn-group">

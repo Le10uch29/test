@@ -81,7 +81,6 @@ header {
 .header-container {
     display: flex;
     color: white;
-    flex-wrap: wrap;
     padding: 10px;
     text-align: center;
 

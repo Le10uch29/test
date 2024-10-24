@@ -83,7 +83,8 @@ header {
     color: white;
     padding: 10px;
     text-align: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-logo {
@@ -166,7 +167,13 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: auto;
 }
+
+.cart-descr{
+margin: 0;
+margin-bottom: 10px;
+} 
 
 .remove-btn {
     background-color: red;
