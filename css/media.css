@@ -12,6 +12,7 @@
     }
 
     .products-list {
+        justify-content: center;
         gap: 20px;
     }
 
@@ -22,6 +23,12 @@
     .header-container {
         justify-content: center;
     }
+
+    .products-container {
+        justify-content: center;
+    }
+    
+ 
 
 }
 
@@ -60,5 +67,10 @@
     #cart img {
         width: 250px;
         height: 250px;
+    }
+
+
+    .productS-title {
+        text-align: center;
     }
 }
