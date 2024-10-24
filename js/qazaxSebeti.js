@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayProducts() {
         productList.innerHTML = '';
         products
-            .filter(product => product.category === 'Qazax Səbəti')
+            .filter(product => product.category === 'Qazax səbəti')
             .forEach((product, index) => {
                 const productCard = document.createElement('li');
                 productCard.classList.add('product-card');
