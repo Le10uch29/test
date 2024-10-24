@@ -1,50 +1,46 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('addForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
+document.addEventListener('DOMContentLoaded', function () {
+    const addForm = document.getElementById('addForm');
+    const productInput = document.getElementById('productInput');
+    const addSelect = document.getElementById('addSelect');
+    const aboutProduct = document.getElementById('aboutProduct');
+    const imgInput = document.getElementById('imgInput');
 
-    
-    const productName = document.getElementById('productInput').value;
-    const productSelect = document.getElementById('addSelect');
-    const productCategory = productSelect.options[productSelect.selectedIndex].value; 
-    const productCategoryId = productSelect.options[productSelect.selectedIndex].id; 
-    const productImage = document.getElementById('imgInput').files[0];
-    const productDescription = document.getElementById('aboutProduct').value;
+    // Обработка загрузки изображения
+    let imageUrl = '';
+    imgInput.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
 
-    if (productImage && productImage.type.startsWith('image/')) {
-        const imageUrl = URL.createObjectURL(productImage); 
-        console.log('Generated Image URL:', imageUrl);
-    
-    
-        const product = {
-            name: productName,
-            category: productCategory,
-            categoryId: productCategoryId,
-            description: productDescription,
-            image: imageUrl
-    };
+        reader.onloadend = function () {
+            imageUrl = reader.result; // Получение base64 изображения
+        };
 
-  
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    products.push(product);
-    localStorage.setItem('products', JSON.stringify(products)); 
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    });
 
-    
-    document.getElementById('addForm').reset();
-    document.getElementById('file-name').innerText = "No file chosen";
-    alert('Product added successfully!');
-    displayProducts(); 
-} else {
-    alert('Please select an image to upload.');
-}
-});
-
-if (form) {  
-    form.addEventListener('submit', function(event) {
+    addForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
+        const product = {
+            name: productInput.value,
+            category: addSelect.value,
+            description: aboutProduct.value,
+            image: imageUrl,
+        };
 
+        // Получение продуктов из localStorage
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+
+        // Добавление нового продукта в массив
+        products.push(product);
+
+        // Сохранение обновленного списка продуктов в localStorage
+        localStorage.setItem('products', JSON.stringify(products));
+
+        alert('Product added successfully!');
+        // Очистка формы после отправки
+        addForm.reset();
     });
-} else {
-    console.error('Element with ID "addForm" not found.');
-}
-})
+});

@@ -13,9 +13,11 @@ html {
 
 h1,
 h2,
-h3 {
+h3,
+p {
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 a {
@@ -31,7 +33,7 @@ img {
 body {
     min-width: 320px;
     font-family: "Nunito Sans" sans-serif;
-    background-color: #fff;
+    background-color: violet;
     margin: 0;
     padding: 0;
 }
@@ -96,6 +98,9 @@ header {
     margin: 0;
     width: 400px;
     margin-right: 40px;
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 55px;
 }
 
 .header-nav {
@@ -117,26 +122,7 @@ header {
     margin-right: 40px;
 }
 
-.nav-item a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
 
-.nav-item a:focus {
-    outline: none;
-    border-bottom: 1px solid red;
-}
-
-.nav-item a:hover {
-    color: blue;
-}
-
-.nav-item a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
 
 .header-back:focus {
     outline: none;
@@ -150,9 +136,96 @@ header {
 }
 
 
-/*products-category*/
+/*wiilage*/
 
-.productS-title {
+.village-title {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.village-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+
+
+.products-list {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 12px 12px 2px 1px rgba(31, 31, 34, 0.2);
+}
+
+.village-list {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.village-item {
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.village-item:focus {
+    border: none;
+    outline-offset: 1px solid red;
+}
+
+.village-item:hover {
+    border: none;
+    outline-offset: none;
+    translate: 10px -5px;
+}
+
+.village-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10px;
+    margin-top: auto;
+    border: 1px solid blue;
+}
+
+.village-item a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.village-item a:focus {
+    outline: none;
+    border-bottom: 1px solid red;
+}
+
+.village-item a:hover {
+    background-color: #2E8B57;
+    color: blue;
+}
+
+
+/*product-category*/
+
+.products-title {
     margin: 0;
     margin-bottom: 40px;
 }
@@ -172,9 +245,21 @@ header {
 }
 
 .product-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 200px;
+    box-shadow: 12px 12px 2px 1px rgba(31, 31, 34, 0.2);
+}
+
+.product-card:focus {
+    outline: none;
+    border: 0;
+    translate: 10px -5px;
+}
+
+.product-card:hover {
+    translate: 10px -5px;
 }
 
 .products-title {

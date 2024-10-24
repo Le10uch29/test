@@ -28,6 +28,7 @@
 
     .products-container {
         justify-content: center;
+        background-color: violet;
     }
     
  .header-logo {
@@ -52,6 +53,9 @@
         margin: 0;
         width: 400px;
         margin-right: 0px;
+        font-size: 39px;
+        font-weight: 700;
+        line-height: 55px;
     }
 
     .nav-list {

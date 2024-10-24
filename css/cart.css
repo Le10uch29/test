@@ -31,7 +31,7 @@ img {
 body {
     min-width: 320px;
     font-family: "Nunito Sans" sans-serif;
-    background-color: #fff;
+    background-color: violet;
     margin: 0;
     padding: 0;
 }
@@ -96,6 +96,9 @@ header {
 .header-title {
     width: 400px;
     margin-right: 40px;
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 55px;
 }
 
 .header-nav {
