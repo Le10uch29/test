@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const productCard = document.createElement('li');
             productCard.classList.add('product-card');
             productCard.innerHTML = `
+            <div claSS="product">
                 <h2 class="product-title">${product.name}</h2>
                 <img class="product-img" src="${product.image}" alt="${product.name}">
                 <p class="product-descr">${product.description}</p>
-                <button class="btn-reset add-to-cart-btn" data-index="${index}">Add to Cart</button>
+                <button class="btn-reset product-btn" data-index="${index}">Add to Cart</button>\
+                </DIV>
             `;
             productsList.appendChild(productCard);
         });
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     displayProducts();
 
     productsList.addEventListener('click', function (event) {
-        if (event.target.classList.contains('add-to-cart-btn')) {
+        if (event.target.classList.contains('product-btn')) {
             const index = event.target.dataset.index;
             const product = products[index];
 

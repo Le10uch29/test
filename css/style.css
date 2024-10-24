@@ -81,6 +81,7 @@ header {
 .header-container {
     display: flex;
     color: white;
+    flex-wrap: wrap;
     padding: 10px;
     text-align: center;
 
@@ -151,16 +152,18 @@ header {
 
 
 /*products-category*/
+
+.productS-title {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
 .products-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
 }
 
-.product-title {
-margin: 0;
-margin-bottom: 40px;
-}
 
 
 .products-list {
@@ -176,6 +179,7 @@ margin-bottom: 40px;
 }
 
 .products-title {
+    margin: 0;
     margin-bottom: 10px;
 }
 

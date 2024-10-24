@@ -19,6 +19,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .header-container {
+        justify-content: center;
+    }
+
 }
 
 
