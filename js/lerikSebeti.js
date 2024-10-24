@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h2 class="product-title">${product.category}</h2>
                         <img class="product-img" src="${product.image}" alt="${product.name}">
                         <p class="product-descr">${product.name}</p>
-                        <div class=btn-group>
+                        <div class="btn-group">
                         <button class="btn-reset product-btn" data-index="${index}">Add to Cart</button>
                         ${loggedIn ? `<button class="btn-reset delete-product-btn" data-index="${index}">Delete</button>` : ''}
                     </div>
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Event delegation for adding to cart and deleting
     productList.addEventListener('click', function (event) {
         const index = event.target.dataset.index;
 
@@ -40,15 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Product added to cart!');
         }
 
-        if (event.target.classList.contains('delete-btn')) {
-            // Filter only products from "Lerik səbəti", delete the correct product, and update localStorage
+        if (event.target.classList.contains('delete-product-btn')) {
+        
             const filteredProducts = products.filter(p => p.category === 'Lerik səbəti');
             const productToDelete = filteredProducts[index];
             const productIndex = products.indexOf(productToDelete);
 
-            products.splice(productIndex, 1);  // Remove the product from the main array
-            localStorage.setItem('products', JSON.stringify(products));  // Update localStorage
-            displayProducts();  // Refresh the product list
+            products.splice(productIndex, 1);  
+            localStorage.setItem('products', JSON.stringify(products));  
+            displayProducts();  
             alert('Product deleted successfully!');
         }
     });
