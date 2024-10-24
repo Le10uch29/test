@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/addproduct.css">
     <link rel="stylesheet" href="./css/media.css">
-    
+    <script defer src="./js/addproduct.js"></script>
+    <script defer src="./js/login.js"></script>
     <title>Add Product</title>
 </head>
 
 <body>
-
     <header class="header">
         <div class="container header-container">
             <img src="./img/logo.png" alt="logo" class="header-logo">
             <h1 class="header-title">Kənd Məhsulları</h1>
-                <a href="./index.html" class="header-back">Back</a>
+            <span id="username-display"></span> 
+            <a href="./index.html" class="header-back">Back</a>
+            <button id="logoutBtn" class="header-logout">Logout</button>
         </div>
     </header>
 
@@ -34,7 +36,7 @@
                 <div class="add-input" id="addCategory">
                     <label for="addSelect">Choose add</label>
                     <select class="form-input" id="addSelect">
-                        <option value="Choose add" >Choose add</option>
+                        <option value="Choose add">Choose add</option>
                         <option value="Gəncə sebeti" id="gence">Gəncə sebeti</option>
                         <option value="Lerik səbəti" id="lerik">Lerik səbəti</option>
                         <option value="Şəki səbəti" id="seki">Şəki səbəti</option>
@@ -43,21 +45,17 @@
                 </div>
                 <div class="add-input add-img" id="addImg">
                     <label for="imgInput" class="custom-file-upload">Upload Image</label>
-                    <input type="file" accept="image/png, image/jpegб image/svg"  class="form-input img-input" id="imgInput">
-                    <span id="file-name" >No file chosen</span>
-                </div> 
-
+                    <input type="file" accept="image/png, image/jpeg, image/svg" class="form-input img-input" id="imgInput">
+                    <span id="file-name">No file chosen</span>
+                </div>
                 <div class="add-input add-textarea" id="addTextarea">
-                <label for="aboutProduct">About Product</label>
-                <textarea id="aboutProduct" class="product-form-textarea " ></textarea>
-            </div>
+                    <label for="aboutProduct">About Product</label>
+                    <textarea id="aboutProduct" class="product-form-textarea"></textarea>
+                </div>
                 <button type="submit" class="btn-reset add-btn" id="addBtn">Submit</button>
             </form>
         </div>
-
     </section>
-
-    <script defer src="./js/addproduct.js"></script>
 </body>
 
 </html>

@@ -1,33 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Массив администраторов
     const admins = [
-        { username: 'admin', password: 'admin' },
-
+        { username: 'Elnur', password: 'admin123' },
     ];
 
-    // Находим элементы формы и поля ввода
     const loginForm = document.getElementById('loginForm');
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
-    const errorMessage = document.getElementById('error-message');
+    const errorMessage = document.getElementById('error-message'); // Добавьте, если нужно для отображения ошибок
 
-    // Обработка отправки формы
-    loginForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+    // Проверка, был ли пользователь уже авторизован
+    if (localStorage.getItem('loggedIn') === 'true') {
+        return window.location.href = 'addproduct.html';
+    }
 
-        // Получаем введенные значения
-        const enteredUsername = usernameInput.value.trim();
-        const enteredPassword = passwordInput.value.trim();
+    // Проверка, существует ли форма входа
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // предотвращение отправки формы по умолчанию
 
-        // Проверяем, совпадают ли введенные данные с данными из массива администраторов
-        const admin = admins.find(admin => admin.username === enteredUsername && admin.password === enteredPassword);
+            const enteredUsername = usernameInput.value.trim();
+            const enteredPassword = passwordInput.value.trim();
 
-        if (admin) {
-            // Если данные верны, перенаправляем на страницу addproduct.html
-            window.location.href = 'addproduct.html';
-        } else {
-            // Если данные неверны, выводим сообщение об ошибке
-            errorMessage.style.display = 'block';
-        }
-    });
+            const admin = admins.find(admin => admin.username === enteredUsername && admin.password === enteredPassword);
+
+            if (admin) {
+                // Если аутентификация успешна, сохраняем состояние входа и перенаправляем
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('username', enteredUsername);
+                window.location.assign('addproduct.html');
+            } else {
+                // Отображение сообщения об ошибке
+                alert('Неверное имя пользователя или пароль.');
+            }
+        });
+    } else {
+        console.error("Login form not found.");
+    }
 });

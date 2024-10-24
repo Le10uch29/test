@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const addSelect = document.getElementById('addSelect');
     const aboutProduct = document.getElementById('aboutProduct');
     const imgInput = document.getElementById('imgInput');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const usernameDisplay = document.querySelector('#username-display'); // Убедитесь, что вы используете правильный селектор
+
+    // Проверка авторизации
+    const loggedIn = localStorage.getItem('loggedIn');
+    if (loggedIn !== 'true') {
+        window.location.href = 'index.html'; // Перенаправление на страницу входа, если пользователь не авторизован
+    } else {
+        const username = localStorage.getItem('username');
+        usernameDisplay.textContent = `Welcome, ${username}!`;
+    }
+
+    logoutBtn.addEventListener('click', function () {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('username');
+        window.location.href = 'index.html';
+    });
 
     // Обработка загрузки изображения
     let imageUrl = '';
@@ -12,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const reader = new FileReader();
 
         reader.onloadend = function () {
-            imageUrl = reader.result; // Получение base64 изображения
+            imageUrl = reader.result;
         };
 
         if (file) {
@@ -20,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Обработка отправки формы
+    if (addForm) {
     addForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -30,17 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
             image: imageUrl,
         };
 
-        // Получение продуктов из localStorage
         let products = JSON.parse(localStorage.getItem('products')) || [];
-
-        // Добавление нового продукта в массив
         products.push(product);
-
-        // Сохранение обновленного списка продуктов в localStorage
         localStorage.setItem('products', JSON.stringify(products));
 
         alert('Product added successfully!');
-        // Очистка формы после отправки
         addForm.reset();
     });
+} else {
+    console.error("Form with id 'addForm' not found.");
+}
 });
