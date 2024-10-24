@@ -9,26 +9,40 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
     <link rel="shortcut icon" href="img/logo.png">
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/login.js"></script>
+
 </head>
 
 <body>
     <header class="header">
         <div class="container header-container">
             <img src="./img/logo.png" alt="logo" class="header-logo">
-            <p class="header-title"><a href="#kənd-məhsulları">Kənd Məhsulları</a></p>
-            <!--- <nav class="nav header-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#gence">Gəncə Səbəti</a></li>
-                    <li class="nav-item"><a href="#lerik">Lerik Səbəti</a></li>
-                    <li class="nav-item"><a href="#seki">Şəki Səbəti</a></li>
-                    <li class="nav-item"><a href="#qazax">Qazax Səbəti</a></li>
-                </ul>
-                
-            </nav> -->
-            <a href="./addproduct.html"><img src="./img/sing.png" alt="sing In" class="nav-sing"></a>
+            <p class="header-title">Kənd Məhsulları</p>
+            <button class="open-login-btn btn-reset" id="openLogin"><img src="./img/sing.png" alt="sing In" class="nav-sing"></button>
         </div>
     </header>
 
+    <!--modal windows-->
+    <section id="log">
+        <div class="modal-container" id="modal">
+            <div class="modal-box">
+                <button class="btn-reset btn-close" id="close-modal">close</button>
+                <h2 class="log-title">Giriş və şifrənizi daxil edin</h2>
+                <form id="login" class="form log-form">
+                    <div class="form-input">
+                        <input type="text" class="form-login">
+                    </div>
+                    <div class="form-input">
+                        <input type="password" class="form-login">
+                    </div>
+                    <button class="btn-reset form-btn">Giriş</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!--viliage products-->
     <section id="villageCart">
         <div class="container village-container">
             <h1 class="village-title">Category</h1>
