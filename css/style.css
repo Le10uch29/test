@@ -279,6 +279,36 @@ header {
     border: 1px solid black;
     padding: 5px 10px;
     text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+.product-btn:hover {
+    background-color: rgb(13, 158, 25);
+    color: #fff;
+}
+
+.product-btn:active {
+    background-color: rgb(5, 168, 168);
+    color: #fff;
+}
+
+.delete-product-btn {
+    display: inline-block;
+    margin-top: auto;
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+.delete-product-btn:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.delete-product-btn:active {
+    background-color: rgb(148, 1, 1);
+    color: #fff;
 }
 
 .footer-container {
@@ -309,6 +339,12 @@ header {
     right: -15px;
 }
 
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
 /*modal*/
 .modal-container {
