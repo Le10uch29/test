@@ -5,6 +5,7 @@
     body {
         overflow: auto;
         touch-action: auto;
+        height: 100vh;
     }
 
     .container {
