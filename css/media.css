@@ -4,9 +4,8 @@
 
     body {
         overflow: auto;
-        touch-action: auto;
         height: 100vh;
-    }
+        }
 
     .container {
         padding: 0 50px;
@@ -48,9 +47,6 @@
 @media(max-width: 600px) {
 
 
-    body {
-        overflow: hidden;
-    }
 
     .container {
         padding: 0 20px;
