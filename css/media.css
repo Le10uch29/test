@@ -20,12 +20,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .header-container {
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
     .products-container {
         justify-content: center;
         background-color: violet;

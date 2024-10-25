@@ -83,9 +83,11 @@ header {
 .header-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     color: white;
     padding: 10px;
     text-align: center;
+    align-items: center;
 
 }
 
@@ -161,17 +163,32 @@ header {
     flex-direction: column;
     gap: 10px;
     transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(7, 211, 247, 0.3);
+    box-shadow: 12px 12px 2px 1px rgba(31, 31, 34, 0.2);
+}
+
+
+.village-img {
+    width: 200px;
+    height: 200px;
 }
 
 .village-item:focus {
     border: none;
-    outline-offset: 1px solid red;
+    translate: 10px -5px;
+
 }
 
 .village-item:hover {
-    border: none;
-    outline-offset: none;
+    outline: none;
     translate: 10px -5px;
+}
+
+.village-item:active {
+    outline: none;
+    translate: 0;
 }
 
 .village-item a {
@@ -196,12 +213,16 @@ header {
 
 .village-item a:focus {
     outline: none;
-    border-bottom: 1px solid red;
 }
 
 .village-item a:hover {
     background-color: #2E8B57;
     color: blue;
+}
+
+.village-item a:active {
+    background-color: #02612b;
+    color: rgb(217, 237, 247);
 }
 
 
