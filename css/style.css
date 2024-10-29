@@ -11,6 +11,10 @@
     padding: 5px;
   }
 
+  body {
+    min-width: 320px;
+  }
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -210,6 +214,8 @@
     position: relative;
     padding-top: 25px;
 }
+
+
 
 .section-header::before {
     position: absolute;
