@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo.svg">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap"
+        rel="stylesheet">
+    <script defer src="./js/addProduct.js"></script>
+    <title>Add Product</title>
+</head>
+
+<body>
+    <section class="add">
+        <h2>əlavə et Səbətə</h2>
+        <div class="container add-container">
+            <form class="add-form" id="addForm">
+                <div class="add-input" id="addProduct">
+                    <label for="productInput">Məhsulun adı</label>
+                    <input type="text" class="form-input" id="productInput">
+                </div>
+                <div class="add-input" id="addCategory">
+                    <label for="addSelect">Əlavə et seçin (Səhifə)</label>
+                    <select class="form-input" id="addSelect">
+                        <option value="Gəncə">Gəncə</option>
+                        <option value="Qazax">Qazax</option>
+                        <option value="Lerik">Lerik</option>
+                        <option value="Şəki">Şəki</option>
+                    </select>
+                </div>
+                <div class="add-input" id="addSubCategory">
+                    <label for="addSubSelect">Kateqoriya</label>
+                    <select class="form-input" id="addSubSelect">
+                        <option value="Standard">Standart</option>
+                        <option value="Vip">Vip</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+                <div class="add-input" id="addTextarea">
+                    <label for="aboutProduct">Məhsul Haqqında</label>
+                    <textarea id="aboutProduct" class="product-form-textarea"></textarea>
+                </div>
+                <button type="submit" class="btn-reset add-btn" id="addBtn">Təqdim et</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>
