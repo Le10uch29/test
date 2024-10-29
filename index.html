@@ -30,6 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="./js/login.js"></script>
 </head>
 
 <body>
@@ -98,23 +99,49 @@
                     <a href="contact.html" class="nav-item nav-link">Bizimlə əlaqə saxlayın</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
+                    <a class="btn-sm-square bg-white rounded-circle ms-2" href="">
                         <small class="fa fa-search text-body"></small>
                     </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
+                    <button id="openLogin" class="btn-sm-square bg-white rounded-circle ms-2"  style="border: none;">
+                        <small class="fa fa-user text-body"></small>
+                    </button>
+                    <button id="logoutBtn" class="btn-sm-square bg-white rounded-circle ms-2"  style="border: none;">
+                        <small class="fa fa-times text-body"></small>
+                    </button>
+                    <a class="btn-sm-square bg-white rounded-circle ms-2" id="addProductLink" href="./addproduct.html" style="display: none;">
                         <small class="fa fa-user text-body"></small>
                     </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
+                    <a class="btn-sm-square bg-white rounded-circle ms-2" href="">
                         <small class="fa fa-shopping-bag text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-red rounded-circle ms-3" href="./addproduct.html">
-                        <small class="fa fa-user text-body"></small>
                     </a>
                 </div>
             </div>
         </nav>
     </div>
     <!-- Navbar End -->
+
+
+
+     <!--modal windows-->
+     <section id="log">
+        <div class="modal-container" id="modal">
+            <div class="modal-box">
+                <button class="btn-reset btn-close" id="close-modal">close</button>
+                <h2 class="log-title">Giriş və şifrənizi daxil edin</h2>
+                <form id="loginForm" class="form log-form">
+                    <div class="form-input">
+                        <label for="username">Login</label>
+                        <input type="text" class="form-login" id="username">
+                    </div>
+                    <div class="form-input">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-login" id="password">
+                    </div>
+                    <button class="btn-reset form-btn">Giriş</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Carousel Start -->
