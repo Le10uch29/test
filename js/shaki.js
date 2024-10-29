@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const products = JSON.parse(localStorage.getItem('products')) || [];
-    const genceProducts = products.filter(product => product.page === "Gəncə");
+    const shakiProducts = products.filter(product => product.page === "Şəki");
     const productContainer = document.getElementById('productContainer');
 
     // Функция отображения товаров по выбранной категории
@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         productContainer.innerHTML = '';
 
         const filteredProducts = category === "All"
-            ? genceProducts
-            : genceProducts.filter(product => product.category === category);
+            ? shakiProducts
+            : shakiProducts.filter(product => product.category === category);
 
         filteredProducts.forEach(product => {
             const productElement = document.createElement('div');

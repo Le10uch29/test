@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const products = JSON.parse(localStorage.getItem('products')) || [];
-    const lerikProducts = products.filter(product => product.page === "Gəncə");
+    const lerikProducts = products.filter(product => product.page === "Lerik");
     const productContainer = document.getElementById('productContainer');
 
     // Функция отображения товаров по выбранной категории
-    function displayProducts(category) {
+    function displayProducts(category = "All") {
         productContainer.innerHTML = '';
 
         const filteredProducts = category === "All"
@@ -22,22 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Устанавливаем обработчик для переключения категорий
+    // Переключение категорий
     document.querySelectorAll('.nav-item a').forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
 
-            // Удаляем класс 'active' у всех ссылок и добавляем только на текущую
             document.querySelectorAll('.nav-item a').forEach(link => link.classList.remove('active'));
             this.classList.add('active');
 
-            // Отображаем товары для выбранной категории
             const selectedCategory = this.getAttribute('data-category');
             displayProducts(selectedCategory);
         });
     });
 
-    // Найти активную категорию по умолчанию и отобразить её товары при загрузке страницы
-    const defaultActiveCategory = document.querySelector('.nav-item a.active').getAttribute('data-category');
-    displayProducts(defaultActiveCategory); // Показать товары активной категории по умолчанию
+    // Отображаем все товары по умолчанию
+    displayProducts();
 });
