@@ -583,4 +583,9 @@ body {
     height: 35px;
 }
 
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
 /*float*/
