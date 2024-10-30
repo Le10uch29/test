@@ -3,26 +3,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const qazaxProducts = products.filter(product => product.page === "Qazax");
     const productContainer = document.getElementById('productContainer');
 
-    // Функция отображения товаров по выбранной категории
-    function displayProducts(category = "All") {
+    function displayProducts(category) {
         productContainer.innerHTML = '';
 
-        const filteredProducts = category === "All"
-            ? qazaxProducts
-            : qazaxProducts.filter(product => product.category === category);
+        const filteredProducts = qazaxProducts.filter(product => product.category === category);
 
-        filteredProducts.forEach(product => {
+        filteredProducts.forEach((product, index) => {
             const productElement = document.createElement('div');
             productElement.className = 'new-product-item';
             productElement.innerHTML = `
+               <div class="menu-product">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
+                </div>
+                ${localStorage.getItem('loggedIn') === 'true' ? `<button class="delete-add-button" data-index="${index}">Delete</button>` : ''}
             `;
+
             productContainer.appendChild(productElement);
+        });
+
+
+        document.querySelectorAll('.delete-add-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const productIndex = this.getAttribute('data-index');
+                deleteProduct(productIndex, category);
+            });
         });
     }
 
-    // Переключение категорий
+    function deleteProduct(index, category) {
+
+        const qazaxIndex = products.findIndex(product => product.page === "Qazax" && qazaxProducts[index] === product);
+
+        if (qazaxIndex > -1) {
+
+            products.splice(qazaxIndex, 1);
+            localStorage.setItem('products', JSON.stringify(products));
+            qazaxProducts.splice(index, 1);
+        }
+
+        displayProducts(category);
+    }
+
     document.querySelectorAll('.nav-item a').forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
@@ -35,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Отображаем все товары по умолчанию
-    displayProducts();
+    const activeCategoryElement = document.querySelector('.nav-item a.active');
+    const initialCategory = activeCategoryElement ? activeCategoryElement.getAttribute('data-category') : 'Standard';
+    displayProducts(initialCategory);
 });

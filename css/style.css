@@ -97,14 +97,18 @@ body {
     color: #FFFFFF;
 }
 
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
+
 
 .btn-sm-square {
     width: 32px;
     height: 32px;
+}
+
+.btn-sm-square-1 small {
+    margin: 0;
+    padding: 0;
+    margin-left: .6rem;
+    margin-top: .5rem;
 }
 
 .btn-lg-square {
@@ -285,7 +289,7 @@ body {
     .burger-menu {
         position: absolute;
         display: flex;
-        top:10px;
+        top: 10px;
 
     }
 
@@ -452,14 +456,42 @@ body {
 
 .new-product-item {
     display: flex;
-    width: 75%;
+    gap: 20px;
+    width: 50%;
+}
+
+.menu-product {
+    display: flex;
     gap: 40px;
+    width: 40%;
     justify-content: space-between;
+    align-content: center;
+    padding: 5px 10px;
+}
+
+.new-product-item h3 {
+    margin: 0;
+
 }
 
 .new-product-item p {
+    margin: 0;
     font-size: 20px;
     font-weight: 600;
+}
+
+.delete-add-button {
+    margin-left: auto;
+    padding: 5px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    border-color: red;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-add-button:hover {
+    background-color: red;
+    color: #fff;
 }
 
 
