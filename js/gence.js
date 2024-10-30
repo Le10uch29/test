@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         filteredProducts.forEach(product => {
             const productElement = document.createElement('div');
-            productElement.className = 'product-item';
+            productElement.className = 'new-product-item';
             productElement.innerHTML = `
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
