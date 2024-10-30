@@ -457,13 +457,13 @@ body {
 .new-product-item {
     display: flex;
     gap: 20px;
-    width: 50%;
+    width: 80%;
 }
 
 .menu-product {
     display: flex;
     gap: 40px;
-    width: 40%;
+    width: 70%;
     justify-content: space-between;
     align-content: center;
     padding: 5px 10px;
